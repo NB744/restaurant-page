@@ -1,119 +1,129 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
+  background: none;
+  color: #1d1d1f;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen;
-      background: none;
-      color: #1d1d1f;
-      line-height: 1.6;
-      min-height: 100vh;
-      position: relative;
-    }
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../img/restaurant_bg_2.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.85;
+  z-index: -1;
+}
 
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('../img/restaurant_bg_2.png') no-repeat center center fixed;
-      background-size: cover;
-      opacity: 0.85;
-      z-index: -1;
-    }
+.site-header{
+  opacity: 0.75;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
+.site-footer{
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
 
-    .site-header {
-      background-color: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 1rem 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Logo/title container */
+#logo-container {
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
 
-    .site-header .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-    }
+/* Logo image */
+#logo-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
 
-    .site-nav{
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-    }
+/* Site title */
+#site-title-container h1.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1d1d1f;
+}
 
-    .site-nav a {
-      margin-right: 1.5rem;
-      text-decoration: none;
-      color: #0071e3;
-      font-weight: 500;
-      transition: color 0.2s ease, border-bottom 0.2s ease;
-      padding-bottom: 0.25rem;
-      border-bottom: 2px solid transparent;
-    }
+/* Navbar container with distinct background */
+#header-navbar-container {
+  background-color: #ffffff;  /* subtle contrast */
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: center;
+}
 
-    .site-nav a:last-child {
-      margin-right: 0;
-    }
+/* Nav links */
+.site-nav {
+  display: flex;
+  gap: 2rem;
+}
 
-    .site-nav a:hover,
-    .site-nav a.active {
-      color: #005bb5;
-      border-bottom: 2px solid #005bb5;
-    }
+.site-navbar-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0071e3;
+  cursor: pointer;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
 
-    main.home {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 1rem;
-      min-height: calc(100vh - 180px);
-    }
+.site-navbar-btn:hover,
+.site-navbar-btn.active {
+  color: #005bb5;
+  border-bottom: 2px solid #00bc81;
+}
+main.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffffcc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
 
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background-color: #ffffffcc;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      max-width: 700px;
-      width: 100%;
-      margin-bottom: 2rem;
-    }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+.hero p {
+  font-size: 1.2rem;
+  color: #3a3a3c;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #3a3a3c;
-    }
-
-    .intro-text {
-      background-color: #ffffffcc;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 800px;
-      width: 100%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .site-footer {
-      text-align: center;
-      padding: 2rem 0;
-      color: #000000;
-      font-size: 0.9rem;
-    }
+.intro-text {
+  background-color: #ffffffcc;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}

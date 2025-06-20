@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebPack = require("html-webpack-plugin");
+const { type } = require("os");
 
 
 module.exports = {
@@ -13,17 +14,6 @@ module.exports = {
     plugins: [
         new HtmlWebPack({
             template: "./src/index.html",
-            filename: "index.html",
-        }),
-        
-        new HtmlWebPack({
-            template: "./src/menu.html",
-            filename: "menu.html",
-        }),
-
-        new HtmlWebPack({
-            template: "./src/contact_us.html",
-            filename: "contact_us.html",
         }),
     ],
     module: {
@@ -32,6 +22,20 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
+
+            {
+                test: /\.html$/i,
+                use: "html-loader",
+            },
+
+            {
+                test: /\.(png|jpg|jpeg|svg|gif)$/i,
+                type: "asset/resource",
+            },
         ],
+    },
+    devtool: "eval-source-map",
+    devServer: {
+        watchFiles: ["./src/index.html"],
     },
 };

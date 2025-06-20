@@ -29,3 +29,6 @@
     font-weight: bold;
     cursor: pointer;
 }
+div#contact-us-ul-container {
+    padding: 0px 30px;
+}
